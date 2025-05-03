@@ -1,4 +1,5 @@
-# Comment installer et utiliser le projet 
+# Comment installer et utiliser Pokedex 
+<img src="https://i.ibb.co/sr0mGvq/Poke-Dex-03-04-2025-long.png" alt="Poke-Dex-03-04-2025-long" border="0">
 
 ### Installer le projet :
 ```
@@ -22,6 +23,7 @@ Si le téléphone n'est pas reconnu :
 
 ### Démarrage du projet :
 Maintenant que le téléphone est connecté : 
+
 Démarrer le serveur :
 ```
 npm start
@@ -30,3 +32,17 @@ Build le projet :
 ```
 npm run android
 ```
+
+Vous devirez voir ceci sur votre app :
+
+<img src="assets/bootsplash/unnamed.jpg" alt="unnamed" border="0" width="200" >
+
+### Utilisation de Pokedex
+
+Depuis la HomePage vous pouvez decouvrir le pokedex. 
+Une fois sur le pokedex, vous pouvez charger plus de pokémon.
+Cliquez sur un pokemon pour voir son détail.
+
+### API 
+
+Un lien vers l'api https://pokeapi.co/

@@ -1,10 +1,12 @@
+import { useNavigation } from '@react-navigation/native';
 import { useEffect, useState } from 'react'
-import { Button, Text, View, FlatList, ActivityIndicator, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { Text, View, FlatList, ActivityIndicator, StyleSheet, Image, TouchableOpacity } from 'react-native'
 
 const POKEAPI_URL = 'https://pokeapi.co/api/v2/pokemon'
 const LIMIT = 10
 
 function Pokedex() {
+  const navigation = useNavigation();
   const [pokemonList, setPokemonList] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [offset, setOffset] = useState(0)
@@ -45,11 +47,14 @@ function Pokedex() {
   }, [])
 
   const renderPokemonItem = ({ item }) => (
-    <View style={styles.pokemonItem}>
+    <TouchableOpacity
+      style={styles.pokemonItem}
+      onPress={() => navigation.navigate('PokemonDetail', { pokemon: item })}
+    >
       <Image source={{ uri: item.imageUrl }} style={styles.pokemonImage} />
       <Text style={styles.pokemonName}>{item.name}</Text>
-    </View>
-  )
+    </TouchableOpacity>
+  );
 
   return (
     <View style={styles.container}>
